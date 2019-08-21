@@ -1,0 +1,6 @@
+module Pods_BookArchive {
+  umbrella header "Pods-BookArchive-umbrella.h"
+
+  export *
+  module * { export * }
+}
