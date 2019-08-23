@@ -19,6 +19,8 @@
 		81B383C4230ACC26001D4AAD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B383C3230ACC26001D4AAD /* DetailViewController.swift */; };
 		81B383C8230BC5D0001D4AAD /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B383C7230BC5D0001D4AAD /* BookModel.swift */; };
 		81B383CB230BDB95001D4AAD /* APICallInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B383CA230BDB95001D4AAD /* APICallInterface.swift */; };
+		81B383CF230D5BD8001D4AAD /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B383CE230D5BD8001D4AAD /* DataFetcher.swift */; };
+		81B383D2230D5DE6001D4AAD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B383D1230D5DE6001D4AAD /* HomeViewModel.swift */; };
 		A1FE401F3C77DB76C87B02F7 /* libPods-BookArchiveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B209A910B11FE1CE1897AE0F /* libPods-BookArchiveTests.a */; };
 		DD9ACB47E43716B8607ACB76 /* libPods-BookArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF82D3AD2ECB91E311927B5 /* libPods-BookArchive.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		81B383C3230ACC26001D4AAD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		81B383C7230BC5D0001D4AAD /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		81B383CA230BDB95001D4AAD /* APICallInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallInterface.swift; sourceTree = "<group>"; };
+		81B383CE230D5BD8001D4AAD /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		81B383D1230D5DE6001D4AAD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B209A910B11FE1CE1897AE0F /* libPods-BookArchiveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookArchiveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74DF5CCCAAD1858479BF8B4 /* Pods-BookArchiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookArchiveTests.release.xcconfig"; path = "Target Support Files/Pods-BookArchiveTests/Pods-BookArchiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		C229E08ADB96F13AF519A286 /* Pods-BookArchiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookArchiveUITests.release.xcconfig"; path = "Target Support Files/Pods-BookArchiveUITests/Pods-BookArchiveUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +111,6 @@
 				6220A164A8C941D2209FAD2E /* Pods-BookArchiveUITests.debug.xcconfig */,
 				C229E08ADB96F13AF519A286 /* Pods-BookArchiveUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,6 +142,7 @@
 				81B38358230AC84D001D4AAD /* AppDelegate.swift */,
 				81B3835C230AC84D001D4AAD /* Main.storyboard */,
 				81B383C0230ACBDC001D4AAD /* ViewController */,
+				81B383D0230D5DCB001D4AAD /* ViewModel */,
 				81B383C6230BC5B0001D4AAD /* Model */,
 				81B383C9230BDB63001D4AAD /* DataInterface */,
 				81B3835F230AC84F001D4AAD /* Assets.xcassets */,
@@ -188,8 +192,17 @@
 			isa = PBXGroup;
 			children = (
 				81B383CA230BDB95001D4AAD /* APICallInterface.swift */,
+				81B383CE230D5BD8001D4AAD /* DataFetcher.swift */,
 			);
 			path = DataInterface;
+			sourceTree = "<group>";
+		};
+		81B383D0230D5DCB001D4AAD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81B383D1230D5DE6001D4AAD /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E04E9BC42DB37E2352ADC006 /* Frameworks */ = {
@@ -408,8 +421,10 @@
 				81B383C8230BC5D0001D4AAD /* BookModel.swift in Sources */,
 				81B383CB230BDB95001D4AAD /* APICallInterface.swift in Sources */,
 				81B3835B230AC84D001D4AAD /* HomeViewController.swift in Sources */,
+				81B383D2230D5DE6001D4AAD /* HomeViewModel.swift in Sources */,
 				81B38359230AC84D001D4AAD /* AppDelegate.swift in Sources */,
 				81B383C2230ACC18001D4AAD /* ListViewController.swift in Sources */,
+				81B383CF230D5BD8001D4AAD /* DataFetcher.swift in Sources */,
 				81B383C4230ACC26001D4AAD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     public var index : Int = 0
     
     @IBOutlet weak var ListTableView: UITableView!
-    var bookList: Array<BookDetails> = []
+    var bookList: Array<BookDetail> = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
