@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum BookFilter : String {
+    case None   = ""
+    case Author = "Author"
+    case Genre = "Genre"
+    case Category = "Category"
+}
+
 struct BookDetail {
     let id      : String?
     let title   : String?

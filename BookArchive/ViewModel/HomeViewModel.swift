@@ -17,9 +17,11 @@ class HomeViewModel {
     var title = ""
     
     // Input
-    var viewDidLoad: () -> () = { }
+    var loadData: () -> () = { }
+    var bindToSourceViewModels :(() -> ()) = {  }
     
-    private var tableDataSource = [BookDetail]()
+    private var filter = BookFilter.None
+    private var tableDataSource = [String]()
     private var dataModel: [BookDetail]! {
         didSet {
             configureTableDataSource()
@@ -29,11 +31,11 @@ class HomeViewModel {
         
     init(dataFetcher: BookDetailFetchProtocol) {
         self.dataFetcher = dataFetcher
-        viewDidLoad = { [weak self] in
+        loadData = { [weak self] in
             self?.getBooksData()
         }
     }
-   
+    
     private func getBooksData() {
         dataFetcher.fetchBookDetail { [weak self] (bookList, errorMessage) in
             guard let books = bookList else {
@@ -46,16 +48,60 @@ class HomeViewModel {
     
     private func configureTableDataSource() {
         for book in dataModel {
-            tableDataSource.append(book)
+            if let title = book.title {
+                tableDataSource.append(title)
+            }
         }
     }
     
     private func configureOutput() {
         title = "Book Archive"
         numberOfRows = tableDataSource.count
+        self.bindToSourceViewModels()
     }
     
-    func tableCellDataModelForIndexPath(_ indexPath: IndexPath) -> BookDetail {
+    func tableCellDataModelForIndexPath(_ indexPath: IndexPath) -> String {
         return tableDataSource[indexPath.row]
+    }
+    
+    func filterList(forType type:BookFilter) -> Void {
+        tableDataSource.removeAll()
+        switch type {
+        case BookFilter.Author:
+            configureTableDataSourceAuthor()
+        case BookFilter.Category:
+            configureTableDataSourceCategory()
+        case BookFilter.Genre:
+            configureTableDataSourceGenre()
+        case BookFilter.None:
+            configureTableDataSource()
+        }
+        let unique = Array(Set(tableDataSource))
+        tableDataSource = unique
+        configureOutput()
+    }
+    
+    private func configureTableDataSourceAuthor() {
+        for book in dataModel {
+            if let author = book.authorName {
+                tableDataSource.append(author)
+            }
+        }
+    }
+    
+    private func configureTableDataSourceCategory() {
+        for book in dataModel {
+            if let category = book.genre {
+                tableDataSource.append(category)
+            }
+        }
+    }
+    
+    private func configureTableDataSourceGenre() {
+        for book in dataModel {
+            if let genre = book.genre {
+                tableDataSource.append(genre)
+            }
+        }
     }
 }

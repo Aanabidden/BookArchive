@@ -76,7 +76,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cv4-la-enC" kind="show" id="zPt-RV-dkI"/>
+                                            <segue destination="cv4-la-enC" kind="show" identifier="ListSegue" id="zPt-RV-dkI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -169,7 +169,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ASd-Io-Uqh" kind="show" id="ueK-R0-zA3"/>
+                                            <segue destination="ASd-Io-Uqh" kind="show" identifier="DetailSegue" id="ueK-R0-zA3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
