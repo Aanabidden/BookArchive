@@ -47,6 +47,7 @@ class HomeViewModel {
     }
     
     private func configureTableDataSource() {
+        tableDataSource.removeAll()
         for book in dataModel {
             if let title = book.title {
                 tableDataSource.append(title)

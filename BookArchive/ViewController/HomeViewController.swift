@@ -67,6 +67,7 @@ class HomeViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:
         {
             (alert: UIAlertAction!) -> Void in
+            self.viewModel.filterList(forType: BookFilter.None)
             self.dismiss(animated: true, completion: nil)
         })
         optionMenu.addAction(authorFilter)
